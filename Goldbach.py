@@ -28,3 +28,6 @@ def Goldbach(x):
 
 n=int(input())
 print(sorted(Goldbach(n)))
+
+# Time complexity: O(n log log n)
+# Procedure:

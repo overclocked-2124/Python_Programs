@@ -19,4 +19,4 @@ P=int(input())
 print(find_Min_Difference(L,P))
 
 # Time Complexity: O(n log n) 
-# Key Takaway : sort it ->sliding window ->finding minimum 
+# Procedure : sort it ->sliding window ->finding minimum 
