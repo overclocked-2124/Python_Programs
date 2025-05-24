@@ -11,22 +11,17 @@ def primefind(y):
         if is_prime[i]:
             for j in range(i*i,y+1,i):
                 is_prime[j]=False
-    for i in range(2,y+1,1):
-        if is_prime[i]:
-            prime.append(i)
     
-    return(prime)
+    return(is_prime)
 
 def Goldbach(x):
     goldbaches = []
-    primes = primefind(x-1) 
+    is_prime = primefind(x-1) 
     
-    for prime in primes:
-        if(prime>x//2):
-            break
-        
-        if( (x-prime) in primes):
-            goldbaches.append((prime,x-prime))
+    for i in range(2,x//2+1,1):
+        if(is_prime[i]):       
+            if(is_prime[x-i]):
+                goldbaches.append((i,x-i))
     
     return (goldbaches)
     
