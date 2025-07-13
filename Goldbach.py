@@ -30,4 +30,15 @@ n=int(input())
 print(sorted(Goldbach(n)))
 
 # Time complexity: O(n log log n)
-# Procedure:
+# Procedure: Sieve of Eratosthenes -> iterate in loop -> check in hash map
+
+# key take aways :
+
+    # Instead of:
+    # Creating is_prime array ✓
+    # Creating separate primes list (why do this?)
+    # Linear search in primes list ❌
+
+    # You can simply:
+    # Create is_prime array ✓
+    # Directly check is_prime[x-prime] ✅
