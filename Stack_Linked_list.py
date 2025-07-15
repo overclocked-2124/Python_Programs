@@ -3,28 +3,42 @@ class Node:
         self.value=v
         self.next=None
     
+class Stack:
+    def __init__(self):
+        self.head=None
+    
     def is_empty(self):
-        if(self.value==None):
+        if(self.head==None):
             return True
         else:
             return False
     
     def push(self,v=None):
-        if(self.value==None):
-            self.value=v
-            return
         newNode=Node(v)
-        (newNode.value,self.value)=(self.value,newNode.value)
-        (newNode.next,self.next)=(self.next,newNode)
+        newNode.next=self.head
+        newNode.value=v
+        self.head=newNode
     
     def pop(self):
         if(self.is_empty()):
             print("stack is empty")
-            return
-        temp=self.value
-        (self.value,self.next.value)=(self.next.value,self.value)
-        (self.next,self.next.next)=(self.next.next,None)
-        return(temp)
+            return None
+        value=self.head.value
+        self.head=self.head.next
+        return(value)
 
+    def peek(self):
+        if(self.is_empty()):
+            print("stack is empty")
+            return None
+        value=self.head.value
+        return(value)
             
-            
+
+# Example usage:
+# s = Stack()
+# s.push(10)
+# s.push(20)
+# print(s.pop())  # 20
+# print(s.pop())  # 10
+# print(s.pop())  # Stack is empty, returns None
