@@ -16,7 +16,6 @@ class Stack:
     def push(self,v=None):
         newNode=Node(v)
         newNode.next=self.head
-        newNode.value=v
         self.head=newNode
     
     def pop(self):
