@@ -12,19 +12,19 @@ class Node:
     def push(self,v=None):
         if(self.value==None):
             self.value=v
-        elif(self.next==None):
-            self.next=Node(v)
-        else:
-            self.next.push(v)
+            return
+        newNode=Node(v)
+        (newNode.value,self.value)=(self.value,newNode.value)
+        (newNode.next,self.next)=(self.next,newNode)
     
     def pop(self):
         if(self.is_empty()):
             print("stack is empty")
-        elif(self.next.next==None):
-            temp=self.next.value
-            self.next=None
-            return(temp)
-        else:
-            self.next.pop()
+            return
+        temp=self.value
+        (self.value,self.next.value)=(self.next.value,self.value)
+        (self.next,self.next.next)=(self.next.next,None)
+        return(temp)
+
             
             
